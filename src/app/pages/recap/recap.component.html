@@ -1,0 +1,75 @@
+<h1>Récapitulatif des Framework</h1>
+
+<section>
+
+<table>
+  <thead>
+    <td></td>
+    <th>Angular</th>
+    <th>Vue</th>
+    <th>React</th>
+  </thead>
+
+  <tbody>
+    <tr>
+      <th>Type de framework</th>
+      <td>Framework <i>opinionated</i> : il y a la façon de faire Angular.</td>
+      <td>Framework léger, propose plusieurs façon de développer : application front, intégré dans une page HTML, dans wordpress,...</td>
+      <td>Plus une librairie qu'un framework : permet surtout de créer du composants avec du JSX.</td>
+    </tr>
+    <tr>
+      <th>Interpolation et Data Binding</th>
+      <td>Automatique, tous les attributs de classe du composant sont surveillées, et le DOM mis à jour à chaque modification.</td>
+      <td>Le DOM est mis à jour pour les données surveillées par React uniquement : les states ( ou les hooks comme useState )</td>
+      <td>Les données surveillées sont, pour l'Option API, dans la méthode Data, et pour la composition API dans les states reactifs ( reactive() ou ref() )</td>
+    </tr>
+    <tr>
+      <th>Language</th>
+      <td>Typescript Uniquement</td>
+      <td>Javascript par défaut, mais Typescript OK sans soucis</td>
+      <td>Javascript par défaut, mais Typescript OK pour Vue 3 ( galère sur Vue2 )</td>
+    </tr>
+    <tr>
+      <th>Template</th>
+      <td>Fichier HTML OU attribut template. Accepte du HTML + des directives Angular</td>
+      <td>JSX : Javascript XML, syntaxe entre le XML et le javascript.</td>
+      <td>Balise template ou fichier HTML, accepte du HTML + des directives Vue.</td>
+    </tr>
+    <tr>
+      <th>Ecosystème</th>
+      <td>Angular est + lourd, mais tout est présent : RXJS, le Router, l'injection de dépendances, ...</td>
+      <td>Très léger mais ne comprend que le nécéssaire pour créer des composants. Il faut installer des librairies pour à peut prét tous le reste.</td>
+      <td>Très léger, quelques outils par défaut, mais uniquement le stric minimum</td>
+    </tr>
+    <tr>
+      <th>Réactivité des données</th>
+      <td>Basé sur l'injection de services, et RXJS ( Observables, Subjects,... )</td>
+      <td>Le Context, ou le store Redux ( Flux est KO )</td>
+      <td>Le store Vuex ( pour vue 2 ), ou Pinia ( pour vue 3 )</td>
+    </tr>
+    <tr>
+      <th>Réagir à la modification de données</th>
+      <td>Observable, Subject, événements natifs : ngModelChange, ngOnChange, ...</td>
+      <td>UseEffect -> ajout des données à surveiller dans le tableau de dépendances</td>
+      <td>Watchers -> on peut créer 1 watcher par donnée à surveillée</td>
+    </tr>
+    <tr>
+      <th>Requêtes</th>
+      <td>Observables avec RXJS, avec HttpClient ( à importer avec HttpClientModule )</td>
+      <td>Promesses avec Axios ou Fetch ( mais peut intégrer RXJS )</td>
+      <td>Promesses avec Axios ou Fetch ( mais peut intégrer RXJS )</td>
+  </tr>
+  <tr>
+    <th>Directives</th>
+    <td>*ngIf, *ngFor, *ngSwitch, [(ngModel)], ...</td>
+    <td>Aucune : uniquement du Javascript</td>
+    <td>v-if, v-for, v-model, v-switch, v-show,...</td>
+  </tr>
+  <tr>
+
+  </tr>
+
+  </tbody>
+
+</table>
+</section>

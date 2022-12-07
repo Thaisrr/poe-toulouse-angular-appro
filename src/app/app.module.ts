@@ -19,6 +19,7 @@ import {HIGHLIGHT_OPTIONS, HighlightModule} from "ngx-highlightjs";
 import {HttpClientModule} from "@angular/common/http";
 import { TodoFilterPipe } from './utils/pipes/todo-filter.pipe';
 import { LoginComponent } from './pages/login/login.component';
+import { RecapComponent } from './pages/recap/recap.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { LoginComponent } from './pages/login/login.component';
     CodeComponent,
     TodoFilterPipe,
     LoginComponent,
+    RecapComponent,
   ],
   imports: [
     BrowserModule,
