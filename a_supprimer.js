@@ -20,3 +20,15 @@ function trucsImportants() {
   console.log(datas);
   /// faire des trucs
 }
+
+// Fichier service
+function getTodos() {
+  return axios.get('urltodo');
+}
+
+// Fichier composant
+async function load() {
+  todos = await getTodos();
+} // Promesse<Todos[]>
+
+load()

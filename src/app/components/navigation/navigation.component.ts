@@ -50,6 +50,7 @@ export class NavigationComponent implements OnInit {
   setTheme() {
     console.log('updating', this.chosen_theme)
     this.hljsLoader.setTheme('./assets/styles/themes/' + this.chosen_theme);
+    localStorage.setItem('theme', this.chosen_theme);
   }
 
 }

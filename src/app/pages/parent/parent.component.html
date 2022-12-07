@@ -5,16 +5,16 @@
 
   <p>Lorsqu'on déclare un attribut dans un composant, sans l'initialiser, typescript peut générer une erreur de compilation.</p>
   <p>Exemple : </p>
-  <p><code>produit : string;</code></p>
+  <p><app-code code="produit : string;"></app-code></p>
   <p>Ici, on déclare une propriété produit de type string, sans l'initialiser à la déclaration ni dans le constructor.</p>
   <p>Hors, une variable non initialisée est <i>undefined</i>, et undefined, c'est un type.</p>
   <p>Donc ici, typescript râle parce que le typage n'est pas bon, string !== undefined;</p>
   <p>Pour pallier à ça, il existe plusieurs solutions : </p>
   <ul>
     <li>Initialiser la valeur avec une valeur par défaut, si possible.</li>
-    <li>Le typer en undefined : <code>produit: string | undefined;</code></li>
-    <li>Le rendre optionnel : <code>produit? : string;</code></li>
-    <li>Le rendre "obligatoire" : <code>produit! : string;</code></li>
+    <li>Le typer en undefined : <app-code code="produit: string | undefined;"></app-code></li>
+    <li>Le rendre optionnel : <app-code code="produit? : string;"></app-code></li>
+    <li>Le rendre "obligatoire" : <app-code code="produit! : string;"></app-code></li>
   </ul>
   <p>(cf : commentaires dans le composant components/enfant.component.ts )</p>
 </section>
@@ -24,12 +24,12 @@
   <p>Passer une information d'un composant parent vers un composant enfant.</p>
 
   <p>Lorsqu'on créé un composant enfant, qui attend une valeur, on le déclare avec une propriété préfixé du décorateur
-  <code>@Input() ma_propriété: type;</code></p>
+  <app-code code="@Input() ma_propriété: type;"></app-code></p>
   <p>On peut ensuite se servir de cette propriété à l'intérieur du composant, et de son template sans avoir à ce soucier
   de ce qu'elle contient ( il faut juste connaître son / ses types possible.</p>
 
   <p>Du côté du parent, on passe la valeur souhaité dans la balise du composant enfant, via un attribut de balise du
-    même nom que l'Input déclaré ( <code>{{ '<' + 'app-enfant' + ' ma_propriété="valeur"' + '>'}}</code></p>
+    même nom que l'Input déclaré ( <app-code code='<app-enfant>ma_propriété="valeur">'></app-code></p>
 
   <p>Cette propriété suit les mêmes règles que les autres attributs HTML : entourée de crochets [], elle interpréte du JS.</p>
 
@@ -38,7 +38,7 @@
   <p>Pour créer un input obligatoire, plusieurs solutions : </p>
   <ul>
     <li>Tester la présence de la valeur dans le ngOnInit, et si elle est vide, lancer une erreur. -> Erreur interpretation dans le navigateur</li>
-    <li>Ajouter le ou les inputs obligatoire dans le selector du composant enfant : <code>selector : 'app-enfant[produit]'</code> -> Lance une erreur de compilation, dans le terminal</li>
+    <li>Ajouter le ou les inputs obligatoire dans le selector du composant enfant : <app-code code="selector : 'app-enfant[produit]'"></app-code> -> Lance une erreur de compilation, dans le terminal</li>
   </ul>
 
   <h3>Mes produits</h3>

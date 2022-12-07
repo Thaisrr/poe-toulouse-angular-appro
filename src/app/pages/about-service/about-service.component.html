@@ -26,5 +26,7 @@
 <section>
   <h2>Todos</h2>
 
-  <p>Ici, les todos</p>
+  <ul>
+    <li *ngFor="let td of todos" [class.completed]="td.completed">{{td.title}}</li>
+  </ul>
 </section>

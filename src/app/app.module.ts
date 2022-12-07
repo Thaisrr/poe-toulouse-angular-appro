@@ -49,6 +49,7 @@ import {HttpClientModule} from "@angular/common/http";
         languages: {
           typescript: () => import('highlight.js/lib/languages/typescript'),
           css: () => import('highlight.js/lib/languages/css'),
+          twig: () => import('highlight.js/lib/languages/twig.js')
         },
         themePath: '../assets/styles/themes/kimbie-dark.css',
 

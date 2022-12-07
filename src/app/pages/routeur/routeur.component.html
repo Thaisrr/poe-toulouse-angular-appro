@@ -21,7 +21,7 @@
 
   <h3>Afficher les routes</h3>
 
-  <p>Pour afficher les composants appelés par les routes, il faut mettre la balise <code>{{ '<' + 'router-outlet' + '>'}}</code>
+  <p>Pour afficher les composants appelés par les routes, il faut mettre la balise <app-code [code]="'<' + 'router-outlet' + '>'"></app-code>
   dans le template de AppComposant.
   </p>
   <p>Pour afficher des routes imbriquées, il faut mettre un nouveau routeur outlet dans le composant parent.</p>
@@ -54,7 +54,7 @@
   de l'application ( si ils sont importer [import] dans AppModule ). </p>
 
   <p>Pour les charger de manière asynchrone, en lazy loading, on leur déclare une route, avec la syntaxe loadChildren.</p>
-  <p><code>{{"{path: 'admin', loadChildren: () => import('./pages/admin/admin.module').then(m => m.AdminModule)}"}}</code></p>
+  <p><app-code [code]="'{path: \'admin\', loadChildren: () => import(\'./pages/admin/admin.module\').then(m => m.AdminModule)}'"></app-code></p>
   <p>Ils ne seront alors chargé que si on accède à cette route.</p>
 
   <p>L'intérêt est d'optimiser le temps de chargement de l'application, notamment au 1er chargement.</p>
