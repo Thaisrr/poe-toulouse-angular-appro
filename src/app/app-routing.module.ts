@@ -5,12 +5,14 @@ import {RouteurComponent} from "./pages/routeur/routeur.component";
 import {NotfoundComponent} from "./pages/notfound/notfound.component";
 import {ParentComponent} from "./pages/parent/parent.component";
 import {AboutServiceComponent} from "./pages/about-service/about-service.component";
+import {LoginComponent} from "./pages/login/login.component";
 
 const routes: Routes = [
   {path: '', component: SyntaxeComponent, title: 'Syntaxe de Composant'},
   {path: 'routeur', component: RouteurComponent, title: 'Angular Routeur'},
   {path: 'communication', component: ParentComponent},
   {path: 'services', component: AboutServiceComponent},
+  {path: 'login', component: LoginComponent},
   {path: 'admin', loadChildren: () => import('./pages/admin/admin.module').then(m => m.AdminModule)},
   {path: 'accueil', redirectTo: ''},
   {path: 'acceuil', redirectTo: ''},

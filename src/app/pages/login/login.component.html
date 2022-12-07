@@ -1,0 +1,20 @@
+<h1>Login</h1>
+
+<section>
+  <h2>Se Connecter</h2>
+  <form (ngSubmit)="login()" [formGroup]="login_form">
+
+    <div>
+      <label>Email <input type="email" formControlName="email"/> <small>eve.holt@reqres.in</small></label>
+    </div>
+
+    <div>
+      <label>Password <input type="password" formControlName="password"/> <small>Any password will works</small></label>
+    </div>
+
+    <p>
+      <button type="submit">Connexion</button>
+    </p>
+
+  </form>
+</section>

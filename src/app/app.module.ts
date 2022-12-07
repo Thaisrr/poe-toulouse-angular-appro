@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { SyntaxeComponent } from './pages/syntaxe/syntaxe.component';
 import { RouteurComponent } from './pages/routeur/routeur.component';
 import { NotfoundComponent } from './pages/notfound/notfound.component';
@@ -18,6 +18,7 @@ import { CodeComponent } from './components/code/code.component';
 import {HIGHLIGHT_OPTIONS, HighlightModule} from "ngx-highlightjs";
 import {HttpClientModule} from "@angular/common/http";
 import { TodoFilterPipe } from './utils/pipes/todo-filter.pipe';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
@@ -35,13 +36,15 @@ import { TodoFilterPipe } from './utils/pipes/todo-filter.pipe';
     IconPipe,
     CodeComponent,
     TodoFilterPipe,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HighlightModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
    {
