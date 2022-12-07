@@ -19,6 +19,8 @@ export class AboutServiceComponent implements OnInit {
 
   todos_bis?: Observable<Todo[]>;
 
+  one_todo_bis$?: Observable<Todo>;
+
   constructor(
     private dataService: DataService,
     private userService: UserService,
@@ -37,6 +39,7 @@ export class AboutServiceComponent implements OnInit {
     this.todoService.getTodos().subscribe(res => this.todos = res);
     this.todoService.getTodoById(1).subscribe(res => this.one_todo  = res);
     this.todos_bis = this.todoService.getTodos();
+    this.one_todo_bis$ = this.todoService.getTodoById(2);
   }
 
   update() {

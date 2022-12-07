@@ -27,18 +27,47 @@
   <h2>Todos</h2>
 
   <div *ngIf="one_todo">
-    <p>{{one_todo | json}}</p>
+    <p>{{one_todo | json  }}</p>
   </div>
 
   <h3>Subscribe</h3>
   <ul>
-    <li *ngFor="let td of todos" [class.completed]="td.completed">{{td.title}}</li>
+    <li *ngFor="let td of todos | todoFilter" [class.completed]="td.completed">{{td.title}}</li>
   </ul>
 
-  <h3></h3>
+  <h3>Async Pipe</h3>
+  <p>Le pipe <b>async</b> est un pipe natif d'Angular. Il prend en entrée un Observable ou une Promesse, et retourne sa réponse.</p>
+  <p>Un <app-code code="Observable<string>"></app-code> retourne une string</p>
+  <p>Un  <app-code code="Observable<Todo[]>"></app-code> retourne un tableau de Todo.</p>
+  <p>Le type de contenu dépend de ce que contient l'Observable.</p>
+  <p>Pour l'utiliser, il n'y a plus besoin de souscrire à l'Observable dans le .ts, il faut juste l'enregistrer dans une variable locale.</p>
+  <p>Exemples d'utilisation : </p>
+  <p>
+    Pour une donnée simple :
+    <app-code [code]="'{' + '{message$ | async }}'"></app-code>
+  </p>
+  <p>
+    Pour un tableau :
+    <app-code code="*ngFor='let t of todos$ | async"></app-code>
+  </p>
   <ul>
-
+    <li *ngFor="let td of todos_bis | async" [class.completed]="td.completed">{{td.title}}</li>
   </ul>
 
+  <p>Pour les objets : </p>
+  <p>Pour les objets, il faut utiliser le async sur l'objet, avant de pouvoir accéder à ses propriétés : </p>
+  <app-code [code]="'{' + '{ (one_todo_bis$ | async)?.title }}'"></app-code>
+  <p>{{ (one_todo_bis$ | async)?.title }}</p>
 
+  <p>On peut le faire via un ngIf et un alias</p>
+  <app-code code='*ngIf="one_todo_bis$ | async as one_todo_bis"'></app-code>
+  <div *ngIf="one_todo_bis$ | async as one_todo_bis">
+    <span>{{one_todo_bis.title}}</span>
+  </div>
+
+  <p><b>Par convention, les variables contenant des Observables sont nommées avec un $ à la fin.</b></p>
+
+  <p><b>Pour résumer : </b> Si les données ne sont traitées que dans le template, on peut utiliser <i>async</i>.
+  Si on a besoin d'agir côté .ts lorsque la donnée change, on va plutôt utiliser <i>subscribe</i>.
+  </p>
 </section>
