@@ -4,6 +4,7 @@ import {UserService} from "../../utils/services/user.service";
 import {User} from "../../utils/models/User";
 import {TodoService} from "../../utils/services/todo.service";
 import {Todo} from "../../utils/models/todo";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-about-service',
@@ -14,6 +15,9 @@ export class AboutServiceComponent implements OnInit {
   message?: string;
   users: User[] = [];
   todos: Todo[] = [];
+  one_todo?: Todo;
+
+  todos_bis?: Observable<Todo[]>;
 
   constructor(
     private dataService: DataService,
@@ -31,6 +35,8 @@ export class AboutServiceComponent implements OnInit {
       this.users = res;
     });
     this.todoService.getTodos().subscribe(res => this.todos = res);
+    this.todoService.getTodoById(1).subscribe(res => this.one_todo  = res);
+    this.todos_bis = this.todoService.getTodos();
   }
 
   update() {

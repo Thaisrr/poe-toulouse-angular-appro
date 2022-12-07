@@ -17,6 +17,7 @@ import { IconPipe } from './utils/pipes/icon.pipe';
 import { CodeComponent } from './components/code/code.component';
 import {HIGHLIGHT_OPTIONS, HighlightModule} from "ngx-highlightjs";
 import {HttpClientModule} from "@angular/common/http";
+import { TodoFilterPipe } from './utils/pipes/todo-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import {HttpClientModule} from "@angular/common/http";
     ToastComponent,
     IconPipe,
     CodeComponent,
+    TodoFilterPipe,
   ],
   imports: [
     BrowserModule,

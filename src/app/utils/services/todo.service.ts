@@ -14,4 +14,8 @@ export class TodoService {
   getTodos(): Observable<Todo[]> {
     return this.http.get<Todo[]>(this.api_url);
   }
+
+  getTodoById(id:number = 1): Observable<Todo> {
+    return this.http.get<Todo>(this.api_url + '/' + id)
+  }
 }

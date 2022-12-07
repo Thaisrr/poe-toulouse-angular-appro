@@ -26,7 +26,19 @@
 <section>
   <h2>Todos</h2>
 
+  <div *ngIf="one_todo">
+    <p>{{one_todo | json}}</p>
+  </div>
+
+  <h3>Subscribe</h3>
   <ul>
     <li *ngFor="let td of todos" [class.completed]="td.completed">{{td.title}}</li>
   </ul>
+
+  <h3></h3>
+  <ul>
+
+  </ul>
+
+
 </section>
