@@ -142,6 +142,10 @@ thead th:first-child {
   border-top-left-radius: 8px;
 }
 
+tbody th {
+  color: var(--main);
+}
+
 thead th {
   font-family: var(--title-font);
   text-align: left;
