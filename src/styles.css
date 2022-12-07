@@ -119,38 +119,33 @@ table {
   border-collapse: collapse;
   border-radius: 8px;
   overflow: hidden;
-  background-color: white;
+  background-color: var(--light);
   position: relative;
 }
 
-table:after {
-  content: '';
-  width: 200px;
-  aspect-ratio: 1/1;
-  border-radius: 50%;
-  color: var(--blue);
-
-}
 
 thead {
-  background-color: var(--yellow);
+  background-color: var(--secondary);
   border-bottom: solid black 2px;
   border-radius: 8px;
+}
+
+.dark thead {
+  background-color: var(--main);
 }
 
 thead th:last-child {
   border-top-right-radius: 8px;
 }
+
 thead th:first-child {
   border-top-left-radius: 8px;
-
 }
 
 thead th {
   font-family: var(--title-font);
   text-align: left;
   padding: 10px 15px;
-
 }
 
 td {
