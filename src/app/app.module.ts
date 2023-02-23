@@ -46,7 +46,7 @@ import { RecapComponent } from './pages/recap/recap.component';
     FormsModule,
     HighlightModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [
    {

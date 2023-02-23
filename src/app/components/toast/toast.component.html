@@ -1,11 +1,10 @@
-<div class="toast-container" *ngIf="toasts?.length">
-  <div *ngFor="let toast of toasts" class="toast" [ngClass]="['toast', toast.level]">
+<div class="toast-container" *ngIf="toasts$ | async as toasts">
+  <div *ngFor="let toast of toasts.reverse(); index as i" [ngClass]="['toast', toast.level]">
     <span class="material-icons">{{toast.icon || (toast.level | icon)}}</span>
     <span class="txt">{{toast.message}}</span>
-    <button>
+    <button (click)="remove(toast.id)">
       <span class="material-icons">close</span>
     </button>
   </div>
-
 </div>
 

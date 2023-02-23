@@ -13,19 +13,26 @@
   --color-text: #311414;
 }
 
+.toast.warn {
+  --color-bg: #ffc061;
+  --color-text: #311e14;
+}
+
 .toast-container {
   position: fixed;
   top: 100px;
   right: 5px;
   display: flex;
   flex-direction: column;
+  align-items: flex-end;
   gap: 30px;
   z-index: 10;
-
+  max-width: max(300px, 20vh);
 }
 
 .toast {
   width: max-content;
+  max-width: 100%;
   transform: translateX(150%);
   background-color: var(--color-bg);
   border-radius: 5px;

@@ -11,6 +11,7 @@ export class IconPipe implements PipeTransform {
       case "success": return "task_alt";
       case "error": return "report_problem";
       case "info" : return "info";
+      case "warn": return "info"
     }
   }
 

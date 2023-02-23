@@ -1,5 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Toasts} from "../../utils/types/ToastMessages";
+import {ToastEvent, Toasts} from "../../utils/types/ToastMessages";
+import {BehaviorSubject, Subscription} from "rxjs";
+import {ToastService} from "../../utils/services/toast.service";
 
 @Component({
   selector: 'app-toast',
@@ -7,9 +9,19 @@ import {Toasts} from "../../utils/types/ToastMessages";
   styleUrls: ['./toast.component.css']
 })
 export class ToastComponent implements OnInit {
-  @Input() toasts?: Toasts;
-  constructor() { }
+  toasts$?: BehaviorSubject<Toasts>;
 
-  ngOnInit(): void {}
+  constructor(
+    private toastService: ToastService
+  ) { }
+
+  ngOnInit(): void {
+    this.toasts$ = this.toastService.currentToasts$;
+  }
+
+  remove(id: number) {
+    this.toastService.remove(id);
+  }
+
 
 }
