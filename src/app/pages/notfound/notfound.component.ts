@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {NgxToastService} from "@thaisrr/ngx-toaster";
 
 
 @Component({
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./notfound.component.css']
 })
 export class NotfoundComponent implements OnInit {
-/*
+
   constructor(
     private toastService: NgxToastService
   ) { }
@@ -52,8 +53,4 @@ export class NotfoundComponent implements OnInit {
     })
   }
 
- */
-
-  ngOnInit() {
-  }
 }

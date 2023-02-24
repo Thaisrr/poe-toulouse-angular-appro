@@ -20,6 +20,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { TodoFilterPipe } from './utils/pipes/todo-filter.pipe';
 import { LoginComponent } from './pages/login/login.component';
 import { RecapComponent } from './pages/recap/recap.component';
+import {NgxToastModule} from "@thaisrr/ngx-toaster";
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { RecapComponent } from './pages/recap/recap.component';
     HighlightModule,
     HttpClientModule,
     ReactiveFormsModule,
+    NgxToastModule
   ],
   providers: [
    {
